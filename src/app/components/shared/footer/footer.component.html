@@ -1,0 +1,31 @@
+<footer class="relative bg-customPrimary text-customSecondary border-t border-white/10 px-6 py-12">
+  <div class="absolute inset-0 pointer-events-none z-0">
+    <div class="absolute inset-0 bg-[url('assets/textures/grain.png')] opacity-10"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+  </div>
+
+  <div class="relative z-10 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-6 text-sm">
+    <div class="flex flex-col items-center sm:items-start gap-2 text-center sm:text-left">
+      <p class="uppercase font-medium tracking-widest text-customSecondary">NIGHTJARS</p>
+      <div class="flex gap-4 mt-1 text-customSecondary/80">
+        <a routerLink="/music" class="hover:text-customAccent transition">Music</a>
+        <a routerLink="/events" class="hover:text-customAccent transition">Events</a>
+        <a routerLink="/about" class="hover:text-customAccent transition">About</a>
+        <a routerLink="/contact" class="hover:text-customAccent transition">Contact</a>
+      </div>
+    </div>
+
+    <div class="flex gap-4 justify-center text-xl">
+      @for (link of socialLinks; track $index) {
+        <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer" class="hover:text-customAccent transition">
+          <fa-icon [icon]="link.icon"></fa-icon>
+        </a>
+      }
+    </div>
+
+    <div class="text-center sm:text-right text-xs text-customSecondary/70">
+      <p>Sherbrooke, Quebec — Canada</p>
+      <p>&copy; 2025 NIGHTJARS. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

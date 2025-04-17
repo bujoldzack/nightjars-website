@@ -1,0 +1,24 @@
+<h2 class="text-center text-customSecondary text-lg sm:text-xl uppercase tracking-widest mb-6 opacity-60">
+  ORIGINALS
+</h2>
+
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+  @for (track of tracks; track $index) {
+    <a
+      [href]="track.link"
+      class="group relative aspect-square bg-white/5 hover:bg-customAccent/10 border border-white/10 backdrop-blur-sm transition duration-300 cursor-pointer overflow-hidden flex flex-col items-center justify-center text-center"
+    >
+
+      <div class="relative z-10 flex flex-col gap-1 items-center justify-center px-2 text-customSecondary">
+        <span
+          class="text-sm sm:text-base font-light tracking-widest uppercase group-hover:opacity-100 opacity-70 transition-opacity duration-300">
+          {{ track.title }}
+        </span>
+        <span
+          class="text-xs sm:text-sm font-extralight tracking-wide opacity-50 group-hover:opacity-80 transition-opacity duration-300">
+          {{ track.releaseDate }}
+        </span>
+      </div>
+    </a>
+  }
+</div>

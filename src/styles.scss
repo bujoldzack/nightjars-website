@@ -1,1 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* tailwind.css or styles.scss */
+.grain-text {
+  background-image:
+    linear-gradient(#E6E4DF, #E6E4DF),
+    url('assets/textures/grain.png');
+  background-size: cover;
+  background-repeat: repeat;
+  background-blend-mode: difference;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@layer utilities {
+  .typewriter {
+    @apply text-customSecondary text-sm sm:text-lg font-light tracking-wide mx-auto whitespace-nowrap overflow-hidden;
+    width: 32ch; /* exact character width */
+    border-right: 2px solid theme('colors.customSecondary'); /* cursor */
+    white-space: nowrap;
+    animation: typing 4s steps(32, end) forwards, blink 0.7s step-end infinite;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 32ch;
+    }
+  }
+
+  @keyframes blink {
+    0%, 100% {
+      border-color: transparent;
+    }
+    50% {
+      border-color: theme('colors.customSecondary');
+    }
+  }
+}
+
+@keyframes floatSlow {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+.animate-floatSlow {
+  animation: floatSlow 10s ease-in-out infinite;
+}
+.delay-300 { animation-delay: 0.3s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-700 { animation-delay: 0.7s; }
+.delay-1000 { animation-delay: 1s; }
+
