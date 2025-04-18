@@ -1,10 +1,11 @@
-import {Component} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {faSpotify, faSoundcloud, faInstagram, faApple, faTiktok} from '@fortawesome/free-brands-svg-icons';
 import {RouterLink} from '@angular/router';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {OriginalsComponent} from './originals/originals.component';
 import {RemixesComponent} from './remixes/remixes.component';
 import {LiveSetsComponent} from './live-sets/live-sets.component';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-home',
@@ -19,6 +20,8 @@ import {LiveSetsComponent} from './live-sets/live-sets.component';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+  dialog = inject(MatDialog);
+
   socialLinks = [
     {icon: faSpotify, url: 'https://open.spotify.com/intl-fr/artist/4nGnMJiON9x7fYHg5KT2m0?si=F4p875X2StWuWMchPvZifQ'},
     {icon: faApple, url: 'https://music.apple.com/us/artist/nightjars/1742718996'},
