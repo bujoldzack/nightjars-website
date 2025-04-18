@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { faSpotify, faSoundcloud, faInstagram, faApple } from '@fortawesome/free-brands-svg-icons';
+import {Component} from '@angular/core';
+import {faSpotify, faSoundcloud, faInstagram, faApple, faTiktok} from '@fortawesome/free-brands-svg-icons';
 import {RouterLink} from '@angular/router';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {OriginalsComponent} from './originals/originals.component';
@@ -20,9 +20,10 @@ import {LiveSetsComponent} from './live-sets/live-sets.component';
 })
 export class HomeComponent {
   socialLinks = [
-    { icon: faSpotify, url: 'https://spotify.com' },
-    { icon: faApple, url: 'https://applemusic.com' },
-    { icon: faSoundcloud, url: 'https://soundcloud.com' },
-    { icon: faInstagram, url: 'https://instagram.com' }
+    {icon: faSpotify, url: 'https://open.spotify.com/intl-fr/artist/4nGnMJiON9x7fYHg5KT2m0?si=F4p875X2StWuWMchPvZifQ'},
+    {icon: faApple, url: 'https://music.apple.com/us/artist/nightjars/1742718996'},
+    {icon: faSoundcloud, url: 'https://soundcloud.com/nightjars-71760892'},
+    {icon: faInstagram, url: 'https://instagram.com/officialnightjars'},
+    {icon: faTiktok, url: 'https://www.tiktok.com/@officialnightjars'}
   ];
 }
